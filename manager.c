@@ -25,7 +25,7 @@ void saveData(Product *p[], int count){
 	for(int i=0; i<count; i++)
 	{
 		if(p[i]==NULL) continue;
-		fprint(fp,"%s\t%.1f\t%d\t%d\t%d\n", p[i]->name, p[i]->weight, p[i]->price, p[i]->rating, p[i]->rating_num);
+		fprintf(fp,"%s\t%.1f\t%d\t%d\t%d\n", p[i]->name, p[i]->weight, p[i]->price, p[i]->rating, p[i]->rating_num);
 	}
 	fclose(fp);
 	printf("=> 저장됨!");
@@ -50,9 +50,6 @@ int loadData(Product *p[]){
 			p[i]->rating=atoi(ptr);
 			ptr=strtok(NULL,"\t\n");
 			p[i]->rating_num=atoi(ptr);
-
-			printf("%d",p[i]->rating);
-			printf("%d",p[i]->rating_num);
 			i++;
 		}
 		printf("=> 로딩성공!\n");
