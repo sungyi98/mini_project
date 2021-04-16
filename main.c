@@ -3,12 +3,12 @@
 
 int main(){
 	Product *p[100];
-	int index=0;
+	int count=0, index=0;
 	int menu;
 #ifdef DEBUG
 	printf(" => DEBUG MODE \n");
 #endif
-	int count=loadData(p);
+	count=loadData(p);
 	index=count;
 	while(1){
 		menu=selectMenu();
