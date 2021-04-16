@@ -31,15 +31,14 @@ void saveData(Product *p[], int count){
 	printf("=> 저장됨!");
 }
 
-void loadData(Product *p[]){
-	int count=0, i=0;
+int loadData(Product *p[]){
+	int i=0;
 	char line[100];
 	FILE *fp;
 	fp=fopen("product.txt","rt");
 	if(fp==NULL) printf("=> 파일 없음\n");
 	else{
 		while(fgets(line, sizeof(line), fp)!=NULL){
-			char price[10];
 			p[i]=(Product *)malloc(sizeof(Product));
 			char *ptr=strtok(line, "\t");
 			strcpy(p[i]->name,ptr);
