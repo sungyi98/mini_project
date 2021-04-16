@@ -61,3 +61,22 @@ void loadData(Product *p[]){
 	fclose(fp);
 	return i;
 }
+void searchProduct(Product *p[], int count){
+	int scnt=0;
+	char search[20];
+
+	printf("검색할 이름? ");
+	getchar();
+	scanf("%[^\n]s",search);
+	printf("*****************************************************\n");
+	printf("No    제품명    중량    판매가격    별점    별점개수\n");
+	for(int i=0; i<count; i++){
+		if(p[i]==NULL) continue;
+		if(strstr(p[i]->name,search)){
+			printf("%2d  ",i+1);
+			scnt++;
+		}
+	}
+	if(scnt==0) printf("=> 검색된 데이터 없음!");
+	printf("\n");
+}
