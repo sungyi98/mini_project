@@ -4,10 +4,12 @@
 int main(){
 	Product *p[100];
 	int index=0;
-	int count=0 , menu;
+	int menu;
 #ifdef DEBUG
 	printf(" => DEBUG MODE \n");
 #endif
+	int count=loadData(p);
+	index=count;
 	while(1){
 		menu=selectMenu();
 		if(menu==0){ 
@@ -40,6 +42,14 @@ int main(){
 					printf("=> 삭제됨!\n");
 				}
 			}
+		}
+		else if(menu ==5)
+		{
+			saveData(p,index);
+		}
+		else if(menu==6)
+		{
+			searchProduct(p,index);
 		}
 	}
 	return 0;
