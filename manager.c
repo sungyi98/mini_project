@@ -70,6 +70,7 @@ void searchProduct(Product *p[], int count){
 		if(p[i]==NULL) continue;
 		if(strstr(p[i]->name,search)){
 			printf("%2d  ",i+1);
+			readProduct(*p[i]);
 			scnt++;
 		}
 	}
