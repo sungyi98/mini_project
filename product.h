@@ -18,6 +18,7 @@ void readProduct(Product p);
 int updateProduct(Product *p);
 int selectMenu();
 void deleteProduct(Product *p[], int index);
-
+int selectDataNo(Product *p[], int count);
+void saveData(Product *p[], int count); 
 
 #endif

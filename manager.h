@@ -4,10 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "product.h"
 
-int selectDataNo(Product *p[], int count);
-void listProduct(Product *p[], int count);
 void saveData(Product *p[], int count);
 int loadData(Product *p[]);
 void searchProduct(Product *p[], int count);
