@@ -27,7 +27,7 @@ int updateProduct(Product *p)
 	scanf("%[^\n]s",p->name);
 	printf("새 중량은? ");
 	scanf("%f",&p ->weight);
-	printf("세 판매가격은? ");
+	printf("새 판매가격은? ");
 	scanf("%d",&p->price);
 	printf("새 별점은?: ");
 	scanf("%d",&p ->rating);
@@ -47,7 +47,9 @@ int selectMenu(){
 	printf("3. 메뉴수정\n");
 	printf("4. 메뉴삭제\n");
 	printf("5. 파일저장\n");
-	printf("6. 이름검색\n");
+	printf("6. 이름으로 검색\n");
+	printf("7. 별점으로 검색\n");
+	printf("8. 가격으로 검색\n");
 	printf("0. 종료\n");
 	printf("=> 원하는 메뉴는? ");
 	scanf("%d",&menu);

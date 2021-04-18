@@ -4,16 +4,17 @@ int main(){
 	Product *p[100];
 	int count=0, index=0;
 	int menu;
+	int exit =1;
 #ifdef DEBUG
 	printf(" => DEBUG MODE \n");
 #endif
 	count=loadData(p);
 	index=count;
-	while(1){
+	while(exit){
 		menu=selectMenu();
 		if(menu==0){ 
 			printf("종료됨!\n");
-			break;
+			exit=0;
 		}
 		if(menu==1||menu==3||menu==4){
 			if(count==0) continue;
@@ -48,8 +49,20 @@ int main(){
 		}
 		else if(menu==6)
 		{
+			printf("** 이름을 입력해 주세요 **\n");
 			searchProduct(p,index);
 		}
+		else if(menu==7)
+		{
+			printf("**  별점을 입력해 주세요 **\n");
+			searchProduct_rating(p,index);
+		}
+		else if(menu==8)
+		{
+			printf("** 가격의 최고한도를 입력해 주세요 **\n");
+			searchProduct_price(p,index);
+		}
+		else continue;
 	}
 	return 0;
 }

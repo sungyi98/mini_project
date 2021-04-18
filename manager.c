@@ -42,3 +42,41 @@ int loadData(Product *p[]){
 	}
 	return i;
 }
+void searchProduct_rating(Product *p[], int count){
+	int scnt = 0;
+	int search;
+	printf("검색할 별점(0~5개)? ");
+	scanf("%d",&search);
+	printf("****************************************************\n");
+	printf("No    제품명    중량    판매가격    별점    별점개수\n");
+	for(int i=0; i<count; i++){
+		if(p[i] ==NULL) continue;
+		if(p[i]->rating==search){
+			printf("%2d  ",i+1);
+			readProduct(*p[i]);
+			scnt++;
+		}
+	}
+	if(scnt==0) printf("=> 검색된 데이터 없음!");
+	printf("\n");
+}
+
+void searchProduct_price(Product *p[], int count){
+	int scnt = 0;
+	int search;
+	printf("검색할 가격 최고한도? ");
+	scanf("%d",&search);
+	printf("****************************************************\n");
+	printf("No    제품명    중량    판매가격    별점    별점개수\n");
+	for(int i=0; i<count; i++){
+		if(p[i] ==NULL) continue;
+		if(p[i]->price<=search){
+			printf("%2d  ",i+1);
+			readProduct(*p[i]);
+			scnt++;
+		}
+	}
+	if(scnt==0) printf("=> 검색된 데이터 없음!");
+	printf("\n");
+}
+	
