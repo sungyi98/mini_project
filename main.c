@@ -1,4 +1,3 @@
-#include "product.h"
 #include "manager.h"
 
 int main(){

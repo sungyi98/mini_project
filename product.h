@@ -1,6 +1,3 @@
-#ifndef _PRODUCT_H
-#define _PRODUCT_H
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,7 +15,6 @@ void readProduct(Product p);
 int updateProduct(Product *p);
 int selectMenu();
 void deleteProduct(Product *p[], int index);
+void listProduct(Product *p[], int count);
 int selectDataNo(Product *p[], int count);
-void saveData(Product *p[], int count); 
-
-#endif
+void searchProduct(Product *p[], int count);
